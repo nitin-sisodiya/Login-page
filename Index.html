@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <form>
+        <h1>Login</h1>
+        <div class="input-box">
+            <input type="text" id="username" placeholder="Username" required>
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" id="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+
+        <div class="remember-forgot">
+            <label><input type="checkbox" id="rememberMe"> Remember me</label>
+            <a href="#">Forget password</a>
+        </div>
+
+        <button type="button" class="btn" onclick="showPopup()">Login</button>
+
+        <div class="register-link">
+            <p>Don't have an account? <a href="#">Register</a></p>
+        </div>
+    </form>
+</div>
+
+<script>
+    function showPopup() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var rememberMe = document.getElementById('rememberMe').checked;
+
+        // Simple validation: Check if both username and password are filled
+        if (username.trim() === '' || password.trim() === '') {
+            alert('Please enter both username and password.');
+        } else {
+            // You can customize the popup message as needed
+            alert('Login successful!\nUsername: ' + username + '\nRemember Me: ' + rememberMe);
+            
+            // Optionally, you can redirect to another page after login
+            // window.location.href = 'dashboard.html';
+        }
+    }
+</script>
+
+</body>
+</html>
